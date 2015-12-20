@@ -1,4 +1,9 @@
-# R Markdown Project 1
+---
+title: "R Markdown Project 1"
+output: 
+  html_document: 
+    keep_md: yes
+---
 
 
 
@@ -34,7 +39,7 @@ myTotal <- summarize(group, total = sum(steps, na.rm = T))
 hist(myTotal$total, main = "Histogram of Total Daily Steps Taken", xlab = "Total Daily Steps" )
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-1-1.png) 
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1-1.png) 
 
 ```r
 myMean <-  mean(myData$steps, na.rm = T)
@@ -52,7 +57,7 @@ myInterval <- summarize(intGroup, intMean = mean(steps, na.rm = T))
 plot(myInterval$interval, myInterval$intMean, type = "l")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 ```r
 maxRow <- myInterval[which.max(myInterval$intMea), ]
@@ -99,7 +104,7 @@ filledTotal <- summarize(filledGroup, total = sum(steps))
 hist(filledTotal$total, main = "Histogram of Total Daily Steps Taken", xlab = "Total Daily Steps" )
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 ```r
 myFilledMean <-  mean(myMerge$steps, na.rm = T)
@@ -139,4 +144,4 @@ avgPlot <- avgPlot + facet_grid(weekendorweekday~.)
 avgPlot + labs(x = "Interval", y = "Number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
